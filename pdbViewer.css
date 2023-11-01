@@ -1,0 +1,41 @@
+#pdbViewer {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+
+        .residue {
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            box-shadow: inset -3px -3px 5px rgba(0, 0, 255, 0.5), inset 3px 3px 5px rgba(255, 255, 255, 0.9);
+        }
+
+        .residue:hover::after {
+            content: attr(data-info);
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            border: 1px solid black;
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 9999999; /* Ensure hover labels are on top */
+        }
+
+        .bond {
+            background-color: black;
+            position: absolute;
+            height: 2px;
+            transform-origin: 0% 0%;
+        }
+
+        .bond.dotted {
+            background: transparent;
+            border-bottom: 2px dashed black;
+        }
